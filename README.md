@@ -10,7 +10,7 @@ Fill out your profile **once** in the extension, and AppiFill will store your da
 - 🗂️ **Fill Once, Apply Anywhere**
   Save your job application details (name, email, phone, cover letter, etc.) in a secure local store.
 
-- 🔒 **Fully Client-Side & Private**
+- 🔒 **Fully Client-Side**
   No servers, no tracking — your data lives only in your browser using Chrome’s secure `chrome.storage.local`.
 
 - ⚡ **Automatic Autofill**
