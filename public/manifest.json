@@ -1,5 +1,5 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 3,
   "name": "Appifill",
   "version": "1.0",
   "description": "Autofills forms with locally stored data",
@@ -11,7 +11,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ]
 }
