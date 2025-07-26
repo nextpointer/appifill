@@ -1,0 +1,16 @@
+{
+  "manifest_version": 1,
+  "name": "Appifill",
+  "version": "1.0",
+  "description": "Autofills forms with locally stored data",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
