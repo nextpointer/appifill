@@ -1,69 +1,29 @@
-# React + TypeScript + Vite
+# AppiFill 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AppiFill** is a simple Chrome Extension that helps you **autofill job application forms** effortlessly.
+Fill out your profile **once** in the extension, and AppiFill will store your data **locally in your browser**, then automatically fill matching fields when you apply for jobs online — all while keeping your information **100% client-side**.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🗂️ **Fill Once, Apply Anywhere**
+  Save your job application details (name, email, phone, cover letter, etc.) in a secure local store.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔒 **Fully Client-Side & Private**
+  No servers, no tracking — your data lives only in your browser using Chrome’s secure `chrome.storage.local`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- ⚡ **Automatic Autofill**
+  When you open job portals, AppiFill detects matching form fields and pre-fills them — you can still edit them manually anytime.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [Bun](https://bun.sh/) — for super-fast JS runtime & bundling
+- [React](https://react.dev/) — for the popup form UI
+- [Chrome Extension APIs](https://developer.chrome.com/docs/extensions/) — for secure local storage and content scripts
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+1. **Install the extension** → fill out your job profile once in the popup.
+2. **Visit a job portal** → AppiFill’s content script detects form fields and fills them automatically.
+3. **Review & Edit** → all fields remain editable so you can tweak them for each application.
