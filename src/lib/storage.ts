@@ -1,5 +1,7 @@
+import type { JobProfileDataType } from "./types";
+
 // for save the data
-export function saveData(key: string, value: string) {
+export function saveData(key: string, value: JobProfileDataType) {
   return new Promise<void>((resolve) => {
     chrome.storage.local.set({ [key]: value }, resolve);
   });
@@ -7,7 +9,7 @@ export function saveData(key: string, value: string) {
 
 // for get the data
 export function getData(key: string) {
-  return new Promise<string>((resolve) => {
+  return new Promise<JobProfileDataType>((resolve) => {
     chrome.storage.local.get([key], (result) => resolve(result[key]));
   });
 }
